@@ -1,9 +1,9 @@
 from django.urls import path
-from view import HomPageView, AboutPageView
+from .views import HomePageView, AboutPageView
 
-urlspatterns = [
-    path("", HomePagesView.as_view(),name= "home"),
-    path("home/", HomePageView.as_view(), name= "home_two"),
-    patr("sbout/", AboutPageView.as_view(), name="about"),
+urlpatterns = [
+    path("", HomePageView.as_view(),name="home"),
+    path("home/", HomePageView.as_view(), name="home_two"),
+    path("about/", AboutPageView.as_view(), name="about"),
 
 ]
