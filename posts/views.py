@@ -9,7 +9,7 @@ PostListView is going to retrieve all of the objects from the Post table in the 
 """
 class PostListView(ListView):
     #template_name attribute is going to be to render
-    template_name="post/list.html"
+    template_name="posts/list.html"
     #model is going to be from which table we want to
     model=Post
     #context is a python dictionary that hold the data
@@ -29,7 +29,6 @@ class PostDetailView(DetailView):
 class PostCreateView(CreateView):
     template_name = "posts/new.html"
     model=Post
-    context_object_name="new_post"
     fields=["title", "subtitle", "body"]
 
 
@@ -37,7 +36,7 @@ class PostCreateView(CreateView):
     PostUpdateView is going to allow us to edit existing records from the db
     """
 class PostUpdateView(UpdateView):
-    template_name="post/edit.html"
+    template_name="posts/edit.html"
     model=Post
     fields = ["title", "subtitle", "body"]
 
@@ -46,7 +45,7 @@ class PostUpdateView(UpdateView):
 PostDeleteView is going to allowu us to delete an existing record from the db
 """
 class PostDeleteView(DeleteView):
-    template_name="post/delete.html"
+    template_name="posts/delete.html"
     model=Post
     success_url= reverse_lazy("post_list")
 
